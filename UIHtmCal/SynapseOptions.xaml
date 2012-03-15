@@ -1,0 +1,76 @@
+﻿<Window x:Class="HTM.UIHtmCal.SynapseOptions"
+        SizeToContent="WidthAndHeight"
+        ResizeMode="NoResize"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:src="clr-namespace:HTM.UIHtmCal"
+        xmlns:pcl="clr-namespace:PhoenixControlLib;assembly=PhoenixControlLib"
+        Title="Synapse Options">
+
+    <Window.Resources>
+        <src:UserInputSynapse x:Key="MySynapseInput"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.DataContext>
+            <Binding Source="{StaticResource MySynapseInput}"></Binding>
+        </Grid.DataContext>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <GridSplitter Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="0" Width="Auto" Height="2"
+                HorizontalAlignment="Stretch"  VerticalAlignment="Top" Margin="-2"/>
+        <GridSplitter Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="2" Width="Auto" Height="2"
+                HorizontalAlignment="Stretch"  VerticalAlignment="Top" Margin="-2"/>
+        <GridSplitter Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="1" Width="Auto" Height="2"
+                HorizontalAlignment="Stretch"  VerticalAlignment="Top" Margin="-2"/>
+        <GridSplitter Grid.Row="2" Grid.RowSpan="5" Grid.Column="0" Width="2" HorizontalAlignment="Right"  
+                          VerticalAlignment="Stretch" Margin="1"/>
+        <GridSplitter Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="7" Width="Auto" Height="2"
+                HorizontalAlignment="Stretch"  VerticalAlignment="Top" Margin="-2"/>
+        <GridSplitter Grid.Row="2" Grid.RowSpan="5" Grid.Column="3" Width="2" HorizontalAlignment="Right"  
+                          VerticalAlignment="Stretch" Margin="1"/>
+        <GridSplitter Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="7" Width="Auto" Height="2"
+                HorizontalAlignment="Stretch"  VerticalAlignment="Top" Margin="-2"/>
+        <GridSplitter Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="10" Width="Auto" Height="2"
+                HorizontalAlignment="Stretch"  VerticalAlignment="Top" Margin="-2"/>
+
+        <!--Labels for Region Input -->
+        <Label Grid.Row="2" Grid.Column="0" Content="Connected Permanence" ToolTip="{Binding Source={StaticResource Settings}, Path=Default.ToolTipPerColText}"/>
+        <Label Grid.Row="2" Grid.Column="3" Content="Permanence Increase"/>
+        <Label Grid.Row="3" Grid.Column="0" Content="Initial Permanence"/>
+        <Label Grid.Row="3" Grid.Column="3" Content="Permanence Decrease"/>
+
+       
+        <!-- Spinners for setting Region input parameters -->
+        <pcl:NumericSpinnerControl Grid.Column="1" Grid.Row="2" Minimum="0" Maximum="100" Value="{Binding Path=ConnectedPerm}" IncrementValue="1"/>
+        <pcl:NumericSpinnerControl Grid.Column="1" Grid.Row="3" Minimum="0" Maximum="100" Value="{Binding Path=IncPerm}" IncrementValue="1"/>
+        <pcl:NumericSpinnerControl Grid.Column="4" Grid.Row="2" Minimum="0" Maximum="100" Value="{Binding Path=DecPerm}" IncrementValue="1"/>
+        <pcl:NumericSpinnerControl Grid.Column="4" Grid.Row="3" Minimum="0" Maximum="100" Value="{Binding Path=InitialPerm}" IncrementValue="1"/>
+      
+        <!-- Save and Cancel Buttons -->
+        <Button Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="10" Margin="3" 
+                    Content="Cancel" HorizontalAlignment="Left" IsCancel="True"/>
+        <Button Name="ok_Button" Grid.ColumnSpan="2" Grid.Column="3" Grid.Row="10" Margin="3" 
+                    Content="Ok" HorizontalAlignment="Right" Click="ok_Button_Click"/>
+
+
+    </Grid>
+</Window>
+

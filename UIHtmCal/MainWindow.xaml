@@ -1,0 +1,406 @@
+﻿<Window x:Class="HTM.UIHtmCal.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow"
+        Width="850"
+        Height="600"
+        FontStyle="Italic"
+        FontWeight="ExtraBlack">
+    <Window.Resources />
+
+    <ScrollViewer>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30" />
+                <ColumnDefinition Width="780" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!--  Menu and Controls  -->
+            <StackPanel Grid.Column="0" Grid.ColumnSpan="2">
+                <Menu IsMainMenu="True">
+                    <MenuItem Header="_File">
+                        <MenuItem Header="Choose Data Source..." />
+                        <Separator />
+                        <MenuItem Click="MenuItem_Click_Exit" Header="_Exit" />
+                    </MenuItem>
+                    <MenuItem Header="_Edit" />
+                    <MenuItem Header="_View">
+                        <MenuItem Click="MenuShowTempLearning" Header="Visualize Neural Net..." />
+                        <MenuItem Click="MenuShowContextDictionary" Header="Context Dictionary..." />
+                    </MenuItem>
+                    <MenuItem Header="_Options">
+                        <MenuItem Click="MenuRegion1Click" Header="Configure Region 1..." />
+                        <MenuItem Click="MenuRegion2Click" Header="Configure Region 2..." />
+                        <MenuItem Click="MenuRegion3Click" Header="Configure Region 3..." />
+                        <Separator />
+                        <MenuItem Click="MenuSynapseClick" Header="Configure Synapse Permanences..." />
+                    </MenuItem>
+                    <MenuItem Click="MenuItem_Click" Header="_Help" />
+                </Menu>
+                <ToolBarTray Background="White">
+                    <ToolBar Name="UIAutomation"
+                             Band="1"
+                             BandIndex="1">
+                        <Button Name="Button_Sentence_Connect"
+                                Background="White"
+                                BorderBrush="Black"
+                                Click="InitalizeAlphaBeta"
+                                Content="AaBb"
+                                ToolTip="Connect to HTM-Network with Alphabeta" />
+                        <Button Name="Button_DB_Connect"
+                                Click="DBConnect_Click"
+                                ToolTip="Connect to HTM-Network Event Database">
+                            <Image Width="28"
+                                   Height="21"
+                                   Source="/UIHtmCal;component/toolgraphics/database_add_48.png" />
+                        </Button>
+                        <Separator />
+                        <Button Name="InitHTM"
+                                Click="InitializeHTM"
+                                IsEnabled="False"
+                                ToolTip="Initialize HTM-Network chosen data source">
+                            <Image Width="28"
+                                   Height="21"
+                                   Source="/UIHtmCal;component/toolgraphics/share_abstract.png" />
+                        </Button>
+                        <Separator />
+                        <Button Name="HTMButtonStep"
+                                Click="StepHTMEvents"
+                                IsEnabled="False"
+                                ToolTip="Step through events">
+                            <Image Width="28"
+                                   Height="21"
+                                   Source="/UIHtmCal;component/toolgraphics/play.png" />
+                        </Button>
+                        <Button Name="HTMButtonFastStep"
+                                Click="FastThroughHTMEvents"
+                                IsEnabled="False"
+                                ToolTip="Fast forwarward through events">
+                            <Image Width="28"
+                                   Height="21"
+                                   Source="/UIHtmCal;component/toolgraphics/play_ff.png" />
+                        </Button>
+                        <Button Name="HTMButtonStop"
+                                Click="StopUIAutomationListen"
+                                IsEnabled="False"
+                                ToolTip="Stop Event-Listener">
+                            <Image Width="23"
+                                   Height="21"
+                                   Source="/UIHtmCal;component/toolgraphics/stop.png" />
+                        </Button>
+                        <Separator />
+                        <Button Name="HTMButtonShow"
+                                Click="MenuShowTempLearning"
+                                IsEnabled="False"
+                                ToolTip="Show  HTM-Network Visualization">
+                            <Image Width="28"
+                                   Height="21"
+                                   Source="/UIHtmCal;component/toolgraphics/neuron_icon_klein.png" />
+                        </Button>
+                    </ToolBar>
+                </ToolBarTray>
+            </StackPanel>
+
+            <Expander Grid.Row="1"
+                      Grid.Column="1"
+                      Header="HTM Statistics and Information">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="300" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="150" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="150" />
+                    </Grid.RowDefinitions>
+                    <!--  Region:  master I  -->
+                    <Label Grid.Row="0" FontSize="14">Region Information</Label>
+                    <DataGrid Name="RegionMasterView"
+                              Grid.Row="1"
+                              AutoGenerateColumns="False"
+                              ItemsSource="{Binding}"
+                              SelectionChanged="RegionMasterView_SelectionChanged"
+                              SelectionMode="Single">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding StepCounter}"
+                                                FontFamily="Arial"
+                                                FontWeight="Bold"
+                                                Header="Steps " />
+                            <DataGridTextColumn Binding="{Binding ActivityRate}"
+                                                FontFamily="Arial"
+                                                FontWeight="Bold"
+                                                Header="Activity Rate" />
+                            <DataGridTextColumn Binding="{Binding PredictPrecision}"
+                                                FontFamily="Arial"
+                                                FontWeight="Bold"
+                                                Header="Predict. Precision" />
+                            <DataGridTextColumn Binding="{Binding PredictionCounter}"
+                                                FontFamily="Arial"
+                                                FontWeight="Bold"
+                                                Header="Predictions" />
+                            <DataGridTextColumn Binding="{Binding CorrectPredictionCounter}"
+                                                FontFamily="Arial"
+                                                FontWeight="Bold"
+                                                Header="Correct Predictions" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <!--  Columns: master II  -->
+                    <Label Grid.Row="2" FontSize="14">Column Information</Label>
+                    <DataGrid Name="ColumnMasterView"
+                              Grid.Row="3"
+                              AutoGenerateColumns="False"
+                              ItemsSource="{Binding}"
+                              SelectionChanged="ColumnMasterView_SelectionChanged"
+                              SelectionMode="Single">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding cPos}"
+                                                FontFamily="Arial"
+                                                FontWeight="Bold"
+                                                Header="Column Position" />
+                            <DataGridTextColumn Binding="{Binding iPos}"
+                                                FontFamily="Arial"
+                                                FontWeight="Bold"
+                                                Header="Input Position" />
+                            <DataGridCheckBoxColumn Binding="{Binding IsActive}" Header="Is Active" />
+                            <DataGridCheckBoxColumn Binding="{Binding IsInhibited}" Header="Is Inhibited" />
+                            <DataGridTextColumn Binding="{Binding ActivityRate}"
+                                                FontFamily="Arial"
+                                                FontWeight="Bold"
+                                                Header="Activity Rate" />
+                            <DataGridTextColumn Binding="{Binding PredictPrecision}"
+                                                FontFamily="Arial"
+                                                FontWeight="Bold"
+                                                Header="Precision" />
+                            <DataGridTextColumn Binding="{Binding Boost}"
+                                                FontFamily="Arial"
+                                                FontWeight="Bold"
+                                                Header="Boost" />
+                            <DataGridTextColumn Binding="{Binding InputArea}"
+                                                FontFamily="Arial"
+                                                FontWeight="Bold"
+                                                Header="InputArea" />
+                            <DataGridTextColumn Binding="{Binding Overlap}"
+                                                FontFamily="Arial"
+                                                FontWeight="Bold"
+                                                Header="Overlap" />
+                            <DataGridTextColumn Binding="{Binding MinOverlap}"
+                                                FontFamily="Arial"
+                                                FontWeight="Bold"
+                                                Header="MinOverlap" />
+                            <DataGridTextColumn Binding="{Binding MinLocalActivity}"
+                                                FontFamily="Arial"
+                                                FontWeight="Bold"
+                                                Header="MinLocalActivity" />
+                        </DataGrid.Columns>
+                        <DataGrid.RowDetailsTemplate>
+                            <DataTemplate>
+                                <Grid Background="BlanchedAlmond" ShowGridLines="True">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0"
+                                           Grid.Column="0"
+                                           ForceCursor="False">
+                                        Max. Cell Activity
+                                    </Label>
+                                    <Label Grid.Row="0" Grid.Column="1">Max. Cell Correct Prediction</Label>
+                                    <Label Grid.Row="0" Grid.Column="2">Max. Cell Learning</Label>
+                                    <Label Grid.Row="0" Grid.Column="3">Max. Number Segments</Label>
+                                    <Label Grid.Row="1"
+                                           Grid.Column="0"
+                                           Content="{Binding MaxCellActivityCounter}" />
+                                    <Label Grid.Row="1"
+                                           Grid.Column="1"
+                                           Content="{Binding MaxCorrectPredictionCounter}" />
+                                    <Label Grid.Row="1"
+                                           Grid.Column="2"
+                                           Content="{Binding MaxLearningCounter}" />
+                                    <Label Grid.Row="1"
+                                           Grid.Column="3"
+                                           Content="{Binding MaxNumberSegments}" />
+                                </Grid>
+                            </DataTemplate>
+                        </DataGrid.RowDetailsTemplate>
+                    </DataGrid>
+
+                    <!--  Detail: Column Spatial Statistics  -->
+                    <Label Grid.Row="4" FontSize="14">Spatial Learning - Column Details</Label>
+                    <DataGrid Name="ColumnDetailView"
+                              Grid.Row="5"
+                              AutoGenerateColumns="False"
+                              ItemsSource="{Binding}"
+                              SelectionMode="Single">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding cPos}"
+                                                FontFamily="Arial"
+                                                FontWeight="Bold"
+                                                Header="Column Position" />
+                            <DataGridTextColumn Binding="{Binding iPos}"
+                                                FontFamily="Arial"
+                                                FontWeight="Bold"
+                                                Header="Input Position" />
+                            <DataGridTextColumn Binding="{Binding ActivityRate}"
+                                                FontFamily="Arial"
+                                                FontWeight="Bold"
+                                                Header="Activity Rate" />
+                            <DataGridTextColumn Binding="{Binding PredictPrecision}"
+                                                FontFamily="Arial"
+                                                FontWeight="Bold"
+                                                Header="Precision" />
+                        </DataGrid.Columns>
+                        <DataGrid.RowDetailsTemplate>
+                            <DataTemplate>
+                                <Grid Background="BlanchedAlmond" ShowGridLines="True">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0"
+                                           Grid.Column="0"
+                                           ForceCursor="False">
+                                        Max. Cell Activity
+                                    </Label>
+                                    <Label Grid.Row="0" Grid.Column="1">Max. Cell Correct Prediction</Label>
+                                    <Label Grid.Row="0" Grid.Column="2">Max. Cell Learning</Label>
+                                    <Label Grid.Row="0" Grid.Column="3">Max. Number Segments</Label>
+                                    <Label Grid.Row="1"
+                                           Grid.Column="0"
+                                           Content="{Binding MaxCellActivityCounter}" />
+                                    <Label Grid.Row="1"
+                                           Grid.Column="1"
+                                           Content="{Binding MaxCorrectPredictionCounter}" />
+                                    <Label Grid.Row="1"
+                                           Grid.Column="2"
+                                           Content="{Binding MaxLearningCounter}" />
+                                    <Label Grid.Row="1"
+                                           Grid.Column="3"
+                                           Content="{Binding MaxNumberSegments}" />
+                                </Grid>
+                            </DataTemplate>
+                        </DataGrid.RowDetailsTemplate>
+                    </DataGrid>
+
+                    <!--  Detail: Cell Statistics  -->
+                    <Label Grid.Row="6" FontSize="14">Temporal Learning - Cell Details</Label>
+                    <DataGrid Name="CellDetailView"
+                              Grid.Row="7"
+                              AutoGenerateColumns="False"
+                              ItemsSource="{Binding}"
+                              SelectionChanged="CellDetailView_SelectionChanged">
+                        <DataGrid.Columns>
+
+                            <DataGridCheckBoxColumn Binding="{Binding isPredicting}" Header="Is Predicting" />
+                            <DataGridCheckBoxColumn Binding="{Binding wasPredicted}" Header="Was Predicting" />
+                            <DataGridCheckBoxColumn Binding="{Binding isActive}" Header="Is Active" />
+                            <DataGridCheckBoxColumn Binding="{Binding wasActive}" Header="Was Active" />
+                            <DataGridTextColumn Binding="{Binding ActivityRate}"
+                                                FontFamily="Arial"
+                                                FontWeight="Bold"
+                                                Header="Activity Rate" />
+                            <DataGridTextColumn Binding="{Binding PredictPrecision}"
+                                                FontFamily="Arial"
+                                                FontWeight="Bold"
+                                                Header="Precision" />
+                            <DataGridTextColumn Binding="{Binding NumberSegments}"
+                                                FontFamily="Arial"
+                                                FontWeight="Bold"
+                                                Header="Segments" />
+                            <DataGridTextColumn Binding="{Binding MaxSynapseCount}"
+                                                FontFamily="Arial"
+                                                FontWeight="Bold"
+                                                Header="Max. Synapses" />
+                        </DataGrid.Columns>
+                        <DataGrid.RowDetailsTemplate>
+                            <DataTemplate>
+                                <Grid Background="BlanchedAlmond">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Grid.Column="0">Activity</Label>
+                                    <Label Grid.Row="0" Grid.Column="1">Learning</Label>
+                                    <Label Grid.Row="0" Grid.Column="2">Prediction</Label>
+                                    <Label Grid.Row="0" Grid.Column="3">Corr. Prediction</Label>
+                                    <Label Grid.Row="0" Grid.Column="4">Steps</Label>
+                                    <Label Grid.Row="1"
+                                           Grid.Column="0"
+                                           Content="{Binding ActivityCounter}" />
+                                    <Label Grid.Row="1"
+                                           Grid.Column="1"
+                                           Content="{Binding LearningCounter}" />
+                                    <Label Grid.Row="1"
+                                           Grid.Column="2"
+                                           Content="{Binding PredictionCounter}" />
+                                    <Label Grid.Row="1"
+                                           Grid.Column="3"
+                                           Content="{Binding CorrectPredictionCounter}" />
+                                    <Label Grid.Row="1"
+                                           Grid.Column="4"
+                                           Content="{Binding StepCounter}" />
+                                </Grid>
+                            </DataTemplate>
+                        </DataGrid.RowDetailsTemplate>
+                    </DataGrid>
+
+                </Grid>
+            </Expander>
+            <Expander Name="HTMLogView"
+                      Grid.Row="2"
+                      Grid.Column="1"
+                      Header="HTM LogView">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="400" />
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" FontSize="14">Learned Sentence</Label>
+                    <DataGrid Name="SentencesLog"
+                              Grid.Row="1"
+                              AutoGenerateColumns="False"
+                              ItemsSource="{Binding}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding StepCounter}" Header="Steps" />
+                            <DataGridTextColumn Binding="{Binding ContextSentence}" Header="Sentence" />
+                            <DataGridTextColumn Binding="{Binding PrecisionDelta}" Header="Delta-Indicator" />
+                            <DataGridTextColumn Binding="{Binding ActivityRate}" Header="Activity Rate" />
+                            <DataGridTextColumn Binding="{Binding PredictPrecision}" Header="Predict. Precision" />
+                            <DataGridTextColumn Binding="{Binding PredictionCounter}"
+                                                FontFamily="Arial"
+                                                Header="Predictions" />
+                            <DataGridTextColumn Binding="{Binding CorrectPredictionCounter}" Header="Correct Predictions" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </Expander>
+        </Grid>
+    </ScrollViewer>
+
+</Window>

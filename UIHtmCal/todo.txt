@@ -1,0 +1,17 @@
+ToDo:
+* Neu erzeugte BitmapListe zum Lernen nutzen. Dabei folgendes zu erledigen:
+	1. Im Menü: Auswahl ob Datenbank oder Alphapet genutzt wird. -> Die Auswahl des einen schließt die Auswahl des anderen aus.
+	2. Bei Änderungen der Sliders: Sequenz muss bei jedem Durchgang wieder variiert werden
+	
+	Ok
+
+* Auswahl der Sourcen: Es kann verschiedene Bitmap-Quellen geben! Daher muss die Schnittstelle zu den Sourcen einheitlich geregelt sein. Diese Schnittstelle wird im HTMControler einheitlich gesetzt: Bisher gibt es zwei (DB und Buchstaben, es sind natürlich noch andere denkbar: Bilder!! usw)
+Klick auf Initialisierungs-Button am Anfang: Öffnet Dialog: -> welche Quelle soll ausgewählt werden. Nach "OK" wird Initialisierung aktiviert (HTMControler entsprechend gesetzt). 
+-> Anschließend kann prinzipiell das Bitmap-Feld durchgearbeitet werden. Log-Sententer im unteren Feld läuft immer mit, sollte daher bedient werden (Sentence oder entsprechendes Interface)
+
+    ok
+	
+* Erneute Randomisierung nach jedem Sequenz-Durchlauf, ne!
+
+* Visualisierung: Statistiken -> was kommt in betracht? Lernregeln nochmal genauer überfliegen!
+

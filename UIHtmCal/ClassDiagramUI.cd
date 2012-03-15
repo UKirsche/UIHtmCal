@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="HTM.UIHtmCal.UserInputRegion" Collapsed="true">
+    <Position X="1.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAggAAAJQEAgIACQQAAAgEABCEAgACggAAoSABA=</HashCode>
+      <FileName>UserInputRegion.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HTM.UIHtmCal.HTMController">
+    <Position X="3.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAEAAAARAAAAQACAAAAAgAAAAAAAAAAAAwAAA=</HashCode>
+      <FileName>HTMController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HTM.UIHtmCal.VisualizeTemporalPooler">
+    <Position X="6" Y="0.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ACALAgYAAAACEAACBAAAEBAAAIAAAEKIBoAAFEAECAQ=</HashCode>
+      <FileName>VisualizeTemporalPooler.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primitives3D.CubePrimitive">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Primitives3D.GeometricPrimitive">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Struct Name="Primitives3D.VertexPositionNormal">
+    <Position X="12" Y="1.25" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

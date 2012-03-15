@@ -1,0 +1,80 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="HTM.UIHtmCal.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ToolTipRegionCheck" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Enable this Region for input processing (Region is created fresh if parameters have changed since last on).</Value>
+    </Setting>
+    <Setting Name="ToolTipPerColText" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Percent of input bits within locality radius each Column has potential (proximal) synapses for.</Value>
+    </Setting>
+    <Setting Name="ToolTipLocalityRadText" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Furthest number of Columns away to allow distal synapse connections (0 means no restriction).</Value>
+    </Setting>
+    <Setting Name="ToolTipMinOverlapText" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Minimum percent of column's proximal synapses that must be active for the column to be considered by the spatial pooler.</Value>
+    </Setting>
+    <Setting Name="ToolTipDesireLocalText" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Approximate percent of Columns within locality radius to be winners after inhibition.</Value>
+    </Setting>
+    <Setting Name="ToolTipCellsPerColText" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Number of (temporal context) cells to use for each Column.</Value>
+    </Setting>
+    <Setting Name="ToolTipThresholdText" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Minimum number of active synapses to activate a segment.</Value>
+    </Setting>
+    <Setting Name="ToolTipNewSynapsesText" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Number of 'new' synapses to add to a segment if none activated during learning.</Value>
+    </Setting>
+    <Setting Name="ToolTipColXText" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Number of Columns in the X direction (width) in this Region.</Value>
+    </Setting>
+    <Setting Name="ToolTipColYText" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Number of Columns in the Y direction (height) in this Region.</Value>
+    </Setting>
+    <Setting Name="ToolTipInhiRadText" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Radius, in Columns, of how far inhibition will take effect per Column (most recent time step).</Value>
+    </Setting>
+    <Setting Name="ToolTipPredAccText" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Correctly predicted active columns out of total sequence-segment predicted columns (most recent time step).</Value>
+    </Setting>
+    <Setting Name="ToolTipActiveAccText" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Correctly predicated active columns out of total active columns (most recent time step).</Value>
+    </Setting>
+    <Setting Name="ToolTipRegionStatusText" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Current state of the Region.</Value>
+    </Setting>
+    <Setting Name="ContextLexikonConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=DAVE\SQLEXPRESS;Initial Catalog=ContextLexikon;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=DAVE\SQLEXPRESS;Initial Catalog=ContextLexikon;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="MaxNumberHTMRegions" Type="System.String" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="ListBoxSentence1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Please Be A Fine Girl Kiss Me</Value>
+    </Setting>
+    <Setting Name="ListBoxSentence2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Inside Crystal Mountain Evil Takes its Form</Value>
+    </Setting>
+    <Setting Name="ListBoxSentence3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Our so called leaders speak with words they try to jail you</Value>
+    </Setting>
+    <Setting Name="ListBoxSentence4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">The power of now is the absence of longing</Value>
+    </Setting>
+    <Setting Name="SliderNoise" Type="System.String" Scope="User">
+      <Value Profile="(Default)">sliderNoise</Value>
+    </Setting>
+    <Setting Name="SliderLetters" Type="System.String" Scope="User">
+      <Value Profile="(Default)">sliderLetters</Value>
+    </Setting>
+    <Setting Name="ListBoxSentence5" Type="System.String" Scope="User">
+      <Value Profile="(Default)">COZYLUMMOXGIVESSMARTSQUIDWHOASKSFORJOBPEN</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

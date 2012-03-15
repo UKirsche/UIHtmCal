@@ -1,0 +1,7 @@
+C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\UIHtmCal\HTMAnalytics\bin\Debug\HTMAnalytics.dll
+C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\UIHtmCal\HTMAnalytics\bin\Debug\HTMAnalytics.pdb
+C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\UIHtmCal\HTMAnalytics\bin\Debug\HTMInterfaces.dll
+C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\UIHtmCal\HTMAnalytics\bin\Debug\HTMInterfaces.pdb
+C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\UIHtmCal\HTMAnalytics\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\UIHtmCal\HTMAnalytics\obj\Debug\HTMAnalytics.dll
+C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\UIHtmCal\HTMAnalytics\obj\Debug\HTMAnalytics.pdb

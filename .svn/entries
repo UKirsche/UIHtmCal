@@ -1,0 +1,89 @@
+10
+
+dir
+2649
+https://subversion.fit.fraunhofer.de/moknow/CAPLE/C%23_Projects/UIHtmCal
+https://subversion.fit.fraunhofer.de/moknow
+
+
+
+2011-04-28T15:07:40.930021Z
+2649
+kirsche
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+66114d89-d56f-0410-afdd-1de1899a944f
+
+Logger
+dir
+
+HTMEventListener
+dir
+
+HTMAnalytics
+dir
+
+UIHtmCal.sln
+file
+3486
+
+
+
+2011-11-30T13:06:31.448000Z
+27b54f65ff128bafb6a5c0971eb283f4
+2012-02-28T17:38:00.237832Z
+3486
+kirsche
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12155
+
+UIHtmCal
+dir
+
+ModelingProject1
+dir
+
+ConsoleApplication1
+dir
+
+ContextDictionary
+dir
+
+Transmute.Windows
+dir
+
+Transmute.Wpf
+dir
+

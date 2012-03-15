@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Regions>
+  <Region Number="1" On="True" Spatial="True" Temporal="True">
+    <CellsPerColumn>4</CellsPerColumn>
+    <ColumnSizeX>8</ColumnSizeX>
+    <ColumnSizeY>8</ColumnSizeY>
+    <InputSizeX>16</InputSizeX>
+    <InputSizeY>16</InputSizeY>
+    <LocalityRad>1</LocalityRad>
+    <SegmentActivateThreshold>3</SegmentActivateThreshold>
+    <NewSynapseCount>5</NewSynapseCount>
+    <PctInputCol>75</PctInputCol>
+    <PctLocalActivity>75</PctLocalActivity>
+    <PctMinOverlap>5</PctMinOverlap>
+  </Region>
+  <Region Number="2" On="false" Spatial="false" Temporal="false">
+    <CellsPerColumn>2</CellsPerColumn>
+    <ColumnSizeX>5</ColumnSizeX>
+    <ColumnSizeY>10</ColumnSizeY>
+    <InputSizeX>10</InputSizeX>
+    <InputSizeY>15</InputSizeY>
+    <LocalityRad>5</LocalityRad>
+    <SegmentActivateThreshold>3</SegmentActivateThreshold>
+    <NewSynapseCount>5</NewSynapseCount>
+    <PctInputCol>5</PctInputCol>
+    <PctLocalActivity>2</PctLocalActivity>
+    <PctMinOverlap>10</PctMinOverlap>
+  </Region>
+  <Region Number="3" On="false" Spatial="false" Temporal="false">
+    <CellsPerColumn>3</CellsPerColumn>
+    <ColumnSizeX>5</ColumnSizeX>
+    <ColumnSizeY>10</ColumnSizeY>
+    <InputSizeX>10</InputSizeX>
+    <InputSizeY>15</InputSizeY>
+    <LocalityRad>5</LocalityRad>
+    <SegmentActivateThreshold>3</SegmentActivateThreshold>
+    <NewSynapseCount>5</NewSynapseCount>
+    <PctInputCol>5</PctInputCol>
+    <PctLocalActivity>2</PctLocalActivity>
+    <PctMinOverlap>10</PctMinOverlap>
+  </Region>
+</Regions>
