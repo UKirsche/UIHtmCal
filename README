@@ -1,0 +1,17 @@
+The UIHtmCal is a research application that allows easy experimentation of Numenta's Hierarchical Temporal Memory (HTM) algorithms using Usage Tracking from Windows Operating Systems as well as 
+other test data.
+
+The UIHtmCal runs a C# implementation of  HTM algorithm which is leaned on the implementation Barry Maturkanich with changes done by myself. The purpose of this project is to test how 
+to make interpretable predictions with HTM. In order to use this project you should have visuals studio installed with NET-Framework of at least 3.5. Import the Project Solution 
+UIHtmCal.sln in Visual Studio and run the program
+
+
+Additional background:
+
+Numenta (www.numenta.com) is designing an exciting new technology based on models of the neocortex called "Hierarchical Temporal Memory".
+
+Their most recent work on HTM, also called the "Cortical Learning Algorithms", is so far unreleased as a software project.  However they have published fairly detailed documentation as well as pseudo-code of how the overall algorithm works.
+
+Numenta is currently allowing non-commerical experimentation by interested developers who wish to implement the ideas from the documention.  However, the algorithm is not free to use in any commericial or production setting.
+
+If you are motivated enough, please also take a look at the code itself to review the details of my Region implementation. I gladly welcome any feedback or suggestions about how I am doing things or what I may be doing wrong.  An easy place for doing so is the 'HTM Theory' forum on www.numenta.com, I am 'binarybarry' there as well.
