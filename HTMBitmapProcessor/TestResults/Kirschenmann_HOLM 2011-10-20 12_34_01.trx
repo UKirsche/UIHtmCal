@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="53375dc9-0529-4b7b-88c9-679448c1941e" name="Kirschenmann@HOLM 2011-10-20 12:34:01" runUser="HOLM\Kirschenmann" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Lokal" id="b41b6ef8-2c83-4fc8-94c4-a59184ecb9a6">
+    <Description>Dies sind die standardmäßigen Testeinstellungen für einen lokalen Testlauf.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Kirschenmann_HOLM 2011-10-20 12_34_01">
+      <DeploymentItem filename="C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\HTMInterfaces\HTMInterfaces\bin\Debug\HTMInterfaces.dll" />
+      <DeploymentItem filename="C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\HTMBitmapProcessor\HTMBitmapProcessor\bin\Debug\HTMBitmapProcessor.dll" />
+      <DeploymentItem filename="C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\log4net-1.2.10\bin\net\2.0\release\log4net.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-10-20T12:34:01.0601005+02:00" queuing="2011-10-20T12:34:01.1481056+02:00" start="2011-10-20T12:34:01.1551060+02:00" finish="2011-10-20T12:34:01.5971312+02:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="GetAppEventFieldsTest" storage="c:\users\kirschenmann\documents\visual studio 2010\projects\htmbitmapprocessor\testbitmapprocessor\bin\debug\testbitmapprocessor.dll" id="9ad1ee18-64ca-234a-f678-927978cf635f">
+      <Execution id="5b325bd4-86de-4e3e-ab22-529cd96805bd" />
+      <TestMethod codeBase="C:/Users/Kirschenmann/Documents/Visual Studio 2010/Projects/HTMBitmapProcessor/TestBitMapProcessor/bin/Debug/TestBitMapProcessor.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestBitMapProcessor.DBLogWrapperTest, TestBitMapProcessor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetAppEventFieldsTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Nicht in einer Liste enthaltene Ergebnisse" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="Alle geladenen Ergebnisse" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="9ad1ee18-64ca-234a-f678-927978cf635f" executionId="5b325bd4-86de-4e3e-ab22-529cd96805bd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="5b325bd4-86de-4e3e-ab22-529cd96805bd" testId="9ad1ee18-64ca-234a-f678-927978cf635f" testName="GetAppEventFieldsTest" computerName="HOLM" duration="00:00:00.0956346" startTime="2011-10-20T12:34:01.1641065+02:00" endTime="2011-10-20T12:34:01.4241214+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5b325bd4-86de-4e3e-ab22-529cd96805bd">
+    </UnitTestResult>
+  </Results>
+</TestRun>

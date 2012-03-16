@@ -1,0 +1,12 @@
+C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\HTMBitmapProcessor\TestBitMapProcessor\bin\Debug\TestBitMapProcessor.dll.config
+C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\HTMBitmapProcessor\TestBitMapProcessor\bin\Debug\TestBitMapProcessor.dll
+C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\HTMBitmapProcessor\TestBitMapProcessor\bin\Debug\TestBitMapProcessor.pdb
+C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\HTMBitmapProcessor\TestBitMapProcessor\bin\Debug\HTMBitmapProcessor.dll
+C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\HTMBitmapProcessor\TestBitMapProcessor\bin\Debug\HTMInterfaces.dll
+C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\HTMBitmapProcessor\TestBitMapProcessor\bin\Debug\log4net.dll
+C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\HTMBitmapProcessor\TestBitMapProcessor\bin\Debug\HTMBitmapProcessor.pdb
+C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\HTMBitmapProcessor\TestBitMapProcessor\bin\Debug\HTMInterfaces.pdb
+C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\HTMBitmapProcessor\TestBitMapProcessor\bin\Debug\log4net.xml
+C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\HTMBitmapProcessor\TestBitMapProcessor\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\HTMBitmapProcessor\TestBitMapProcessor\obj\Debug\TestBitMapProcessor.dll
+C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\HTMBitmapProcessor\TestBitMapProcessor\obj\Debug\TestBitMapProcessor.pdb

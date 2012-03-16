@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="c83e9b55-cfd6-48a1-b9ea-9834ac015d40" name="Kirschenmann@HOLM 2011-10-21 16:42:05" runUser="HOLM\Kirschenmann" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Lokal" id="b41b6ef8-2c83-4fc8-94c4-a59184ecb9a6">
+    <Description>Dies sind die standardmäßigen Testeinstellungen für einen lokalen Testlauf.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Kirschenmann_HOLM 2011-10-21 16_42_05">
+      <DeploymentItem filename="C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\log4net-1.2.10\bin\net\2.0\release\log4net.dll" />
+      <DeploymentItem filename="C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\HTMBitmapProcessor\HTMBitmapProcessor\bin\Debug\HTMBitmapProcessor.dll" />
+      <DeploymentItem filename="C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\HTMInterfaces\HTMInterfaces\bin\Debug\HTMInterfaces.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-10-21T16:42:05.6709230+02:00" queuing="2011-10-21T16:42:05.8139312+02:00" start="2011-10-21T16:42:05.8269319+02:00" finish="2011-10-21T16:42:06.4879697+02:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="StepTest" storage="c:\users\kirschenmann\documents\visual studio 2010\projects\htmbitmapprocessor\testbitmapprocessor\bin\debug\testbitmapprocessor.dll" id="3bc3f31b-0e92-f14b-4c40-89c35782c7f5">
+      <Execution id="8d223512-24a0-4fb1-b3b5-1bde6507ca49" />
+      <TestMethod codeBase="C:/Users/Kirschenmann/Documents/Visual Studio 2010/Projects/HTMBitmapProcessor/TestBitMapProcessor/bin/Debug/TestBitMapProcessor.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestBitMapProcessor.BitMapProcessorTest, TestBitMapProcessor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="StepTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Nicht in einer Liste enthaltene Ergebnisse" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="Alle geladenen Ergebnisse" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="3bc3f31b-0e92-f14b-4c40-89c35782c7f5" executionId="8d223512-24a0-4fb1-b3b5-1bde6507ca49" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="8d223512-24a0-4fb1-b3b5-1bde6507ca49" testId="3bc3f31b-0e92-f14b-4c40-89c35782c7f5" testName="StepTest" computerName="HOLM" duration="00:00:00.1059095" startTime="2011-10-21T16:42:05.8349324+02:00" endTime="2011-10-21T16:42:06.1149484+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8d223512-24a0-4fb1-b3b5-1bde6507ca49">
+    </UnitTestResult>
+  </Results>
+</TestRun>

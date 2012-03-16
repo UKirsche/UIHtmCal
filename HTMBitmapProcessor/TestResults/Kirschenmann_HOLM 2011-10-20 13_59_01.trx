@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="731ffa25-91d4-44cc-9cc7-e287bc3c0d45" name="Kirschenmann@HOLM 2011-10-20 13:59:01" runUser="HOLM\Kirschenmann" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Lokal" id="b41b6ef8-2c83-4fc8-94c4-a59184ecb9a6">
+    <Description>Dies sind die standardmäßigen Testeinstellungen für einen lokalen Testlauf.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Kirschenmann_HOLM 2011-10-20 13_59_01">
+      <DeploymentItem filename="C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\HTMInterfaces\HTMInterfaces\bin\Debug\HTMInterfaces.dll" />
+      <DeploymentItem filename="C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\HTMBitmapProcessor\HTMBitmapProcessor\bin\Debug\HTMBitmapProcessor.dll" />
+      <DeploymentItem filename="C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\log4net-1.2.10\bin\net\2.0\release\log4net.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-10-20T13:59:01.4045960+02:00" queuing="2011-10-20T13:59:01.4936011+02:00" start="2011-10-20T13:59:01.5586048+02:00" finish="2011-10-20T13:59:02.2846464+02:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="GetAppVocabularyTest" storage="c:\users\kirschenmann\documents\visual studio 2010\projects\htmbitmapprocessor\testbitmapprocessor\bin\debug\testbitmapprocessor.dll" id="b418093d-1633-8275-e7c9-6df6acb06b09">
+      <Execution id="7c2b3380-529f-437c-917b-3c3f57f2f799" />
+      <TestMethod codeBase="C:/Users/Kirschenmann/Documents/Visual Studio 2010/Projects/HTMBitmapProcessor/TestBitMapProcessor/bin/Debug/TestBitMapProcessor.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestBitMapProcessor.DBLogWrapperTest, TestBitMapProcessor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetAppVocabularyTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Nicht in einer Liste enthaltene Ergebnisse" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="Alle geladenen Ergebnisse" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="b418093d-1633-8275-e7c9-6df6acb06b09" executionId="7c2b3380-529f-437c-917b-3c3f57f2f799" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="7c2b3380-529f-437c-917b-3c3f57f2f799" testId="b418093d-1633-8275-e7c9-6df6acb06b09" testName="GetAppVocabularyTest" computerName="HOLM" duration="00:00:00.1782312" startTime="2011-10-20T13:59:01.5146023+02:00" endTime="2011-10-20T13:59:01.8786231+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7c2b3380-529f-437c-917b-3c3f57f2f799">
+    </UnitTestResult>
+  </Results>
+</TestRun>
