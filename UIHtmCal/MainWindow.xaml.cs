@@ -99,21 +99,6 @@ namespace HTM.UIHtmCal
             synOptsDlg.ShowDialog();
         }
 
-        /// <summary>
-        /// Open context dictionary
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MenuShowContextDictionary(object sender, RoutedEventArgs e)
-        {
-            //1. Lade Dialog-Fenster
-            Lexikon contextDictionary = new Lexikon();
-            contextDictionary.Owner = this;
-            contextDictionary.Title = "Context Dictionary";
-
-            // Open a window
-            contextDictionary.ShowDialog();
-        }
 
         /// <summary>
         /// Open visualisation of HTM-Network 1: temporal pooling

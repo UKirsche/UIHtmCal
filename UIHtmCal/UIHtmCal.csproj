@@ -101,9 +101,6 @@
     <Compile Include="ColumnInhibitionRule.cs" />
     <Compile Include="ConfXMLLoad.cs" />
     <Compile Include="HTMController.cs" />
-    <Compile Include="Lexikon.xaml.cs">
-      <DependentUpon>Lexikon.xaml</DependentUpon>
-    </Compile>
     <Compile Include="RegionConfLoad.cs" />
     <Compile Include="RegionOpts.xaml.cs">
       <DependentUpon>RegionOpts.xaml</DependentUpon>
@@ -128,10 +125,6 @@
     <Compile Include="VisualizeTemporalPooler.xaml.cs">
       <DependentUpon>VisualizeTemporalPooler.xaml</DependentUpon>
     </Compile>
-    <Page Include="Lexikon.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
