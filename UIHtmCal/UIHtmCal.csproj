@@ -259,10 +259,6 @@
       <Project>{2B313E1C-FCAD-4741-98DF-89F00175F725}</Project>
       <Name>HTMLibrary</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ContextDictionary\ContextDictionary.csproj">
-      <Project>{C5ED0D9D-9846-4690-950C-719B050596D8}</Project>
-      <Name>ContextDictionary</Name>
-    </ProjectReference>
     <ProjectReference Include="..\HTMAnalytics\HTMAnalytics.csproj">
       <Project>{7207AF10-AF71-4A56-BBC4-5579B32CB83E}</Project>
       <Name>HTMAnalytics</Name>

@@ -675,10 +675,10 @@ namespace HTM.UIHtmCal
 			{
 				color = dictColors[HTMColors.Predicting].htmColor;
 			}
-            else if (cell.isSegmentPredicting)
-            {
-                color = dictColors[HTMColors.SequencePredicting].htmColor;
-            }
+			else if (cell.isSegmentPredicting)
+			{
+				color = dictColors[HTMColors.SequencePredicting].htmColor;
+			}
 		}
 
 

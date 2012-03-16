@@ -161,8 +161,6 @@ namespace HTM.UIHtmCal
                 oldSelColumn.IsDataGridSelected = false;
             }
 
-            //Bind the column to the datagrid ColumnDetailView for Spatial Learning
-            ColumnDetailView.DataContext = selColumn;
             //Bind the cells of Column to CellDetail for TemporalLearning-Information
             CellDetailView.DataContext = selColumn.cells;
         }
@@ -224,7 +222,6 @@ namespace HTM.UIHtmCal
         /// <param name="value"></param>
         public void EnableSourceButtons(bool value)
         {
-            Button_DB_Connect.IsEnabled = value;
             Button_Sentence_Connect.IsEnabled = value;
         }
 
