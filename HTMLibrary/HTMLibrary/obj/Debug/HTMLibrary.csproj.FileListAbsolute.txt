@@ -1,0 +1,9 @@
+C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\UIHtmCal\HTMLibrary\HTMLibrary\bin\Debug\HTMLibrary.dll
+C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\UIHtmCal\HTMLibrary\HTMLibrary\bin\Debug\HTMLibrary.pdb
+C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\UIHtmCal\HTMLibrary\HTMLibrary\bin\Debug\HTMAnalytics.dll
+C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\UIHtmCal\HTMLibrary\HTMLibrary\bin\Debug\HTMInterfaces.dll
+C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\UIHtmCal\HTMLibrary\HTMLibrary\bin\Debug\HTMInterfaces.pdb
+C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\UIHtmCal\HTMLibrary\HTMLibrary\bin\Debug\HTMAnalytics.pdb
+C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\UIHtmCal\HTMLibrary\HTMLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\UIHtmCal\HTMLibrary\HTMLibrary\obj\Debug\HTMLibrary.dll
+C:\Users\Kirschenmann\Documents\Visual Studio 2010\Projects\UIHtmCal\HTMLibrary\HTMLibrary\obj\Debug\HTMLibrary.pdb

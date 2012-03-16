@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="HTMInterfaces">
+  <logicalClassDesignerModelMoniker Id="82463748-0378-4f1c-b33b-83c6c8b42be0" />
+  <nestedChildShapes>
+    <interfaceShape Id="a54414ab-d870-4716-a012-fcdfb3736a02" absoluteBounds="1.5, 1.25, 1.5, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="207, 223, 191">
+      <interfaceMoniker Id="7b8d76a5-9b32-4736-9a30-e47ce73f4862" LastKnownName="IRegionInput" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="6d64543e-dcca-4db2-b774-a307d4e8149b" absoluteBounds="1.5150000000000006, 1.6400000000000001, 1.4700000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="138b22f6-c349-4f6d-abd7-363b7de47486" absoluteBounds="1.5150000000000006, 1.8511718675494193, 1.4700000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </interfaceShape>
+  </nestedChildShapes>
+</logicalClassDesignerDiagram>

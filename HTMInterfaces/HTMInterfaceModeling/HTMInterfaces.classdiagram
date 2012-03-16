@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="82463748-0378-4f1c-b33b-83c6c8b42be0" name="HTMInterfaces" linkedPackageId="ec2d3e00-cd1f-4f52-b8a7-a347a860777e" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="5386565f-ddb6-4deb-9a0d-1300663fb90a">
+      <profileInstance Id="86bc817e-b5b1-4959-9793-a5441e1b9b31" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="72cebbdd-96a2-4e95-8e4d-120e315faa52">
+      <profileInstance Id="6a924363-70e8-4554-a828-6cba8a2b5823" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="7b8d76a5-9b32-4736-9a30-e47ce73f4862" name="IRegionInput" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="34a4db70-bec0-42d9-a032-c126f449c9eb" />
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="ec2d3e00-cd1f-4f52-b8a7-a347a860777e" name="HTMInterfaceModeling">
+    <elementDefinition Id="859e6bc2-5c0d-4b2d-a12e-3a546eef9e09" />
+  </package>
+</logicalClassDesignerModel>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="d17b3b31-3b68-4813-babf-700b8df77744" name="UMLClassDiagram1" linkedPackageId="f7814da4-ad9e-4e01-8eea-5f34a25f06c4" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="e547f888-07c9-48e8-955f-681d96b124f8">
+      <profileInstance Id="79fba647-dda0-49df-b73f-469c845402df" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="f4105f02-6a0f-42f3-b6f1-f6dc72e30efe">
+      <profileInstance Id="d949092f-4a34-4122-bb19-38cf9d9228a6" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="791bd613-bf28-4238-8149-1f8b604fc1e7" name="IRegionInput" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="eb50f48e-f3ea-44aa-bc12-672adf952d52" />
+        <ownedAttributes>
+          <property Id="725e38d4-2752-49d5-8cf2-79654e76573b" name="ConnectionSTring" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ed19199d-8240-4728-832c-3049cb2b004b" />
+          </property>
+        </ownedAttributes>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="740453a4-2f9c-4611-8589-2c03e21c15e1" name="IRegionOutPut" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="7aee194f-83f7-4173-b25a-6fcd0b13a8f9" />
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="bb13e91c-46bd-40fa-8673-1a6f3201a336" name="IRegionUpdate" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="743dc723-982b-4543-91f6-0d84591f32df" />
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="f7814da4-ad9e-4e01-8eea-5f34a25f06c4" name="HTMModelingInterfaces">
+    <elementDefinition Id="1decdbb9-7ff1-4345-99e0-7766f0b812b3" />
+  </package>
+</logicalClassDesignerModel>

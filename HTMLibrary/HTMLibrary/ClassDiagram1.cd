@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Spatial Pooler Concepts (p. 28 HTM-CLA)&#xD;&#xA;=========================&#xD;&#xA;==Basic Setup ==&#xD;&#xA;1) Start with an input consisting of a fixed number of bits. These bits might represent sensory data or they might come from another region lower in the hierarchy:&#xD;&#xA;= Realized by &#xD;&#xA;a.) inputData in Region.cs. At the moment consisting of a 2-dim-Array consisting of with &amp; height. Active Inputs are set to 1, in active to zero. &#xD;&#xA;b.) Relevant methods: updateInput (Region.cs), getOutPut(Region.cs): Especially the getOutPut-Method provides the input for the next region. Active Columns are set to 1 if one cell or column is active OR predicting&#xD;&#xA;&#xD;&#xA;2) Assign a fixed number of columns to the region receiving this input. Each column has an associated dendrite segment. Each dendrite segment has a set of potential synapses representing a subset of the input bits. Each potential synapse has a permanence value. Based on their permanence values, some of the potential synapses will be valid.&#xD;&#xA;= Realized by: &#xD;&#xA;a.) Konstruktor of Region (Region.cs): Assign fixed number of columns of the region receiving input:  &#xD;&#xA;* Depends on parameter pctInputPerCol in Constructor of Region.cs (lnr.114) as then on the localityradius also as paramter, see also lnr.173. Number of Columns in Region1 defined by Barry as half number of input bits (line 134, Region.cs)&#xD;&#xA;b.)   Each column has an associated dendrite segment. Each dendrite segment has a set of potential synapses representing a subset of the input bits. Each potential synapse has a permanence value. Based on their permanence values, some of the potential synapses will be valid: OO-Design: column does have a proximalsegment for that purpose. Each segment does have a list of according synapses, each synapse does have a permanence value. ATTENTION: according to inputSource (InputCell (can always be seen as 2-dim-array because of merged column-output-&gt; spatial pooling), Cell-&gt; temporal pooling). &#xD;&#xA;&#xD;&#xA;2.) II&#xD;&#xA; Prior to receiving any inputs, the region is initialized by computing a list of initial potential synapses for each column. This consists of a random set of inputs selected from the input space. Each input is represented by a synapse and assigned a random permanence value. The random permanence values are chosen with two criteria. First, the values are chosen to be in a small range around connectedPerm (the minimum permanence value at which a synapse is considered &quot;connected&quot;). This enables potential synapses to become connected (or disconnected) after a small number of training iterations. Second, each column has a natural center over the input region, and the permanence values have a bias towards this center (they have higher values near the center).&#xD;&#xA;&#xD;&#xA;a.)The list of potential synapses is is drawn randomly from the set of assigned input bits (line 218 ff., s.a. locality radius) for each column. Then the permanence value for each synapse is computed according to a random draw from normal distribution and bias for center distance.(line 242ff)&#xD;&#xA;&#xD;&#xA;b.) At last the inhibition radius is computed as the average receptive field size for the distal segment including all connected synpases (see Method: averageReceptiveFieldSize(), line 331 and 341 ff.)&#xD;&#xA;&#xD;&#xA;==Sequence Flow==&#xD;&#xA;3)For any given input, determine how many valid synapses on each column are connected to active input bits: This deals now with the sequence flow of computing the spatialer pooler for SDR concept. -&gt; performSpatialPooling (line 294, Region.cs):&#xD;&#xA;a.)&#xD;&#xA;Compute the overlap with the current input for each column. Given an input vector, the first phase calculates the overlap of each column with that vector. The overlap for each column is simply the number of connected synapses with active inputs, multiplied by its boost. If this value is below minOverlap, we set the overlap score to zero. Done in computeOverlap (Region.cs: line 299, Column.cs: line 160)&#xD;&#xA;&#xD;&#xA;b.)&#xD;&#xA;Compute the winning columns after inhibition. The second phase calculates which columns remain as winners after the inhibition step. desiredLocalActivity is a parameter that controls the number of columns that end up winning. For example, if desiredLocalActivity is 10, a column will be a winner if its overlap score is greater than the score of the 10'th highest column within its inhibition radius. (Region.cs: line 304 ff, kthScore-Method: k-highest overlap values, 592). -&gt; For each winner: set Column active&#xD;&#xA;&#xD;&#xA;c.)&#xD;&#xA;Update synapse permanence and internal variables.The third phase performs learning; it updates the permanence values of all synapses as necessary, as well as the boost and inhibition radius. The main learning rule is implemented in lines 317-330 (Region.cs). For winning columns (line 320), if a synapse is active, its permanence value is incremented, otherwise it is decremented. Permanence values are constrained to be between 0 and 1. To update the permanences, the proximalSegment of the column is iterating all the active synapses. This helps to thin out non-required inputSources.&#xD;&#xA;&#xD;&#xA;Lines 326-330 implement boosting. There are two separate boosting mechanisms in place to help a column learn connections. &#xD;&#xA;If a column does not win often enough (as measured by activeDutyCycle), its overall boost value is increased (line 215 Column.cs, bzw. boostFunction(), line:278). Boosting cares for letting increase the permanence value of all active synapses.&#xD;&#xA;Alternatively, if a column's connected synapses do not overlap well with any inputs often enough (as measured by overlapDutyCycle), its permanence values are boosted (line 220, bzw. 295 increasePermanences, Column.cs). ATTENTION: in this case ALL the synapses of the dendrite sgement are boosted, as the overlap is below threshold.&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;">
+    <Position X="0.5" Y="7.943" Height="8.89" Width="11.929" />
+  </Comment>
+  <Comment CommentText="Temporal Pooler Concept&#xD;&#xA;================&#xD;&#xA;Note: Temporal Pooler sets firstly: cells in active state that were predicted, secondly predicts next time step (isSequence for segmentupdatelist bzw. segmentupdateinfo)&#xD;&#xA;================&#xD;&#xA;&#xD;&#xA;PHASE 1:&#xD;&#xA;======&#xD;&#xA;Check for predictive state in t-1 and set active as well as choose learning cells&#xD;&#xA;======&#xD;&#xA;1.) For each active column, check for cells in the column that are in a predictive state, and activate them. If no cells are in a predictive state, activate all the cells in the column. The resulting set of active cells is the representation of the input in the context of prior input (Region.cs: lines 390-592)&#xD;&#xA;&#xD;&#xA;a.) Compute the active state, activeState(t), for each cell. The first phase calculates the activeState for each cell that is in a winning column. For those columns, the code further selects one cell per column as the learning cell (learnState). The logic is as follows: if the bottom-up input was predicted by any cell (i.e. its predictiveState output was 1 due to a sequence segmentUpdateList), then those cells become active (line 437). &#xD;&#xA;&#xD;&#xA;If that segmentUpdateList became active from cells chosen with learnState on, this cell is selected as the learning cell (lines 439-443). If the bottom-up input was not predicted, then all cells in the col become active (lines 447-453). In addition, the best matching cell is chosen as the learning cell (lines 454-477 ) and a new segmentUpdateList is added to that cell. This is the most difficult part to understand. Here the definition of SegmenUpdateInfo that is created as a new learning cell is chosen that best matches the previous activation pattern (getBestMatchingCell, Column.cs, lines 102-153):&#xD;&#xA;This data structure holds three pieces of information required to update a given segment: &#xD;&#xA;	a) segment reference (None if it's a new segment), &#xD;&#xA;	b) a list of existing active synapses, and &#xD;&#xA;	c) a flag indicating whether this segment should be marked as a sequence&#xD;&#xA;	segment (defaults to false).&#xD;&#xA;The structure also determines which learning cells (at this time step) are available to connect &#xD;&#xA;(add synapses to) should the segment get updated. If there is a locality radius set on the Region, &#xD;&#xA;the pool of learning cells is restricted to those with the radius (segmentUpdateInfo.cs)&#xD;&#xA;&#xD;&#xA;In the temporal pooler the SegmentUpdateInfo is created in line 462 (Region.cs) by Cell.getSegmentActiveSynapses(), which provides the following functionality:&#xD;&#xA;Return a SegmentUpdateInfo object containing proposed changes to the specified segmentUpdateList.  If the segmentUpdateList is None, then a new segmentUpdateList is to be added, otherwise&#xD;&#xA;the specified segmentUpdateList is updated.  If the segmentUpdateList exists, find all active synapses for the segmentUpdateList (either at t or t-1 based on the 'previous' parameter) and mark them as needing to be updated.  If newSynapses is true, then  Region.newSynapseCount - len(activeSynapses) new synapses are added to the segmentUpdateList to be updated.  The (new) synapses are randomly chosen from the set&#xD;&#xA;of current learning cells (within Region.localityRadius if set). Or in more detail: Return a list of proposed changes (synapses to update or add) to this segment. ActiveSynapses are those that are active (at time t) (to inc or dec later). If newSynapses, then add new synapses to the segment randomly sampled from set of cells with learn state True (at time t)  (see here: SegmentUpdateInfo.cs, Constructor, lines 31-128)&#xD;&#xA;Either:&#xD;&#xA;	a) new segment and new synapses for it&#xD;&#xA;	b) existing segment, only update perm of existing syns&#xD;&#xA;	c) existing segment, update perm of existing syns and add new syns&#xD;&#xA;&#xD;&#xA;(Cell.cs, lines 156-187)&#xD;&#xA;&#xD;&#xA;PHASE 2:&#xD;&#xA;======&#xD;&#xA;Set cells in predictive state time t&#xD;&#xA;======&#xD;&#xA;For every dendrite segment on every cell in the region, count how many established synapses are connected to active cells. If the number exceeds a threshold, that dendrite segment is marked as active. Cells with active dendrite segments are put in the predictive state unless they are already active due to feed-forward input. Cells with no active dendrites and not active due to bottom-up input become or remain inactive. The collection of cells now in the predictive state is the prediction of the region. (Region.cs, lines 495-506). &#xD;&#xA;When a dendrite segment becomes active, modify the permanence values of all the synapses associated with the segment. For every potential synapse on the active dendrite segment, increase the permanence of those synapses that are connected to ( Numenta 2010 Page 31) active cells and decrement the permanence of those synapses connected to inactive cells. These changes to synapse permanence are marked as temporary (Region.cs, lines 509-520)&#xD;&#xA;This modifies the synapses on segments that are already trained sufficiently to make the segment active, and thus lead to a prediction. However, we always want to extend predictions further back in time if possible. Thus, we pick a second dendrite segment on the same cell to train. For the second segment we choose the one that best matches the state of the system in the previous time step. For this segment, using the state of the system in the previous time step, increase the permanence of those synapses that are connected to active cells and decrement the permanence of those synapses connected to inactive cells. These changes to synapse permanence are marked as temporary. (lines 525-544).&#xD;&#xA;4) Whenever a cell switches from being inactive to active due to feed-forward input, we traverse each potential synapse associated with the cell and remove any temporary marks. Thus we update the permanence of synapses only if they correctly predicted the feed-forward activation of the cell.&#xD;&#xA;5) When a cell switches from either active state to inactive, undo any permanence changes marked as temporary for each potential synapse on this cell. We don’t want to strengthen the permanence of synapses that incorrectly predicted the feed-forward activation of a cell.&#xD;&#xA;(4. + 5. take place in lines 559-587). Reinforcement and punishment take place in adaptSegments, lines 733-796): Iterates all the SegmentUpdateInfo and creates segments for new as well as new synapses for learning cells if so needed.&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;">
+    <Position X="0.5" Y="17.789" Height="9.545" Width="11.94" />
+  </Comment>
+  <Class Name="HTM.HTMLibrary.Segment">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAEAgAAAAAAEAABAEAgAAoAABAAIAAAAIAAA=</HashCode>
+      <FileName>Segment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HTM.HTMLibrary.DistalSynapse">
+    <Position X="11" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAEAABAAAgAAAAAAAAAACAEAAAA=</HashCode>
+      <FileName>DistalSynapse.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HTM.HTMLibrary.Synapse" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACQEAgAYBAACAAAAAAAAAAACAAAAAE=</HashCode>
+      <FileName>Synapse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HTM.HTMLibrary.Cell" Collapsed="true">
+    <Position X="6.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAgQAAEQMAACEEAA4gAiIhAUwhAAIAEAAgNECBCMgCI=</HashCode>
+      <FileName>Cell.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HTM.HTMLibrary.Column">
+    <Position X="13" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GAiCPCGRIBQqkAgA4hBiIDACgFAAoAEFAoMEKACdiCA=</HashCode>
+      <FileName>Column.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HTM.HTMLibrary.Region">
+    <Position X="6.75" Y="0.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAKQCkkAoBMAQUg4gAoAIaAiFAgAAAQKgoGYgSWQCA=</HashCode>
+      <FileName>Region.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HTM.HTMLibrary.InputCell" Collapsed="true">
+    <Position X="4" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEACBAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Region.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HTM.HTMLibrary.SegmentUpdateInfo">
+    <Position X="1.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAUAAAAAIAAAEAAAAAAEAAAAAAAAQCAA=</HashCode>
+      <FileName>SegmentUpdateInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="HTM.HTMLibrary.ITemporal" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAEAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ITemporal.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HTM.HTMInterfaces.IStatistics" Collapsed="true">
+    <Position X="4.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

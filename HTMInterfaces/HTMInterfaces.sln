@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTMInterfaces", "HTMInterfaces\HTMInterfaces.csproj", "{B21192E5-4773-4603-8359-E4DBF22FADD8}"
+EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "HTMInterfaceModeling", "HTMInterfaceModeling\HTMInterfaceModeling.modelproj", "{63328655-7814-4CC7-9188-21B19ABBA96D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B21192E5-4773-4603-8359-E4DBF22FADD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B21192E5-4773-4603-8359-E4DBF22FADD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B21192E5-4773-4603-8359-E4DBF22FADD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B21192E5-4773-4603-8359-E4DBF22FADD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63328655-7814-4CC7-9188-21B19ABBA96D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63328655-7814-4CC7-9188-21B19ABBA96D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63328655-7814-4CC7-9188-21B19ABBA96D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63328655-7814-4CC7-9188-21B19ABBA96D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

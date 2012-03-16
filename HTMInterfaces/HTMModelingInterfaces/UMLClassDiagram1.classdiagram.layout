@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="UMLClassDiagram1">
+  <logicalClassDesignerModelMoniker Id="d17b3b31-3b68-4813-babf-700b8df77744" />
+  <nestedChildShapes>
+    <interfaceShape Id="ceaad29b-558f-4167-b345-aa7687f4fdbe" absoluteBounds="2.5, 0.875, 1.875, 1.0624999801317852" hideQualifiedName="false" increaseHeight="0" customColor="207, 223, 191">
+      <interfaceMoniker Id="791bd613-bf28-4238-8149-1f8b604fc1e7" LastKnownName="IRegionInput" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="c29d2c79-1866-41a1-b7ad-4c966f012d13" absoluteBounds="2.515, 1.2650000000000001, 1.8450000000000002, 0.36132811258236563" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="cd236786-102b-498f-bbb2-23db341f3902" absoluteBounds="2.515, 1.6363281125823657, 1.8450000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </interfaceShape>
+    <interfaceShape Id="7be6bda5-2d68-4163-939c-d9084713947b" absoluteBounds="4.625, 0.875, 1.5, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="207, 223, 191">
+      <interfaceMoniker Id="740453a4-2f9c-4611-8589-2c03e21c15e1" LastKnownName="IRegionOutPut" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="76f4e799-81f2-40e1-a50d-d8e28e04c738" absoluteBounds="4.64, 1.2650000000000001, 1.4700000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="faf25989-9afc-4acf-a77c-6ff1c9bbd5bf" absoluteBounds="4.64, 1.4761718675494193, 1.4700000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </interfaceShape>
+    <interfaceShape Id="3f01b9ef-54e3-4674-902a-2f4d7bafa783" absoluteBounds="6.5, 0.875, 1.5, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="207, 223, 191">
+      <interfaceMoniker Id="bb13e91c-46bd-40fa-8673-1a6f3201a336" LastKnownName="IRegionUpdate" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="d3589381-d769-4074-af0e-cd22be7a4b5e" absoluteBounds="6.515, 1.2650000000000001, 1.4700000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="990f7e32-241b-4b42-ba81-7fcc8d53afb6" absoluteBounds="6.515, 1.4761718675494193, 1.4700000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </interfaceShape>
+  </nestedChildShapes>
+</logicalClassDesignerDiagram>

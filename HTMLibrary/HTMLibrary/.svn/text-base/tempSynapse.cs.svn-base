@@ -1,0 +1,132 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+///
+/// @created 20.3.2011
+/// Taken from first approach by Mutakarnich in Python
+/// Adapted by Uwe Kirschenmann
+/// @author Barry Mutakarnich, Uwe Kirschenmann
+///
+
+
+namespace HTMLibrary
+{
+    /// <summary>
+    /// A data structure representing a synapse. Contains a permanence value and the 
+    ///source input index.  Also contains a 'location' in the input space that this synapse
+    ///roughly represents.
+    /// </summary>
+     
+    public class Synapse<T>
+    {
+        /// <summary>
+        /// Static parameters that apply to all Region instances
+        /// </summary>
+        public const float CONNECTED_PERM = 0.2f; //Synapses with permanences above this value are connected.
+        public const float PERMANENCE_INC = 0.05f; //Amount permanences of synapses are incremented in learning.
+        public const float PERMANENCE_DEC = 0.04f; //Amount permanences of synapses are decremented in learning.
+        public const float INITIAL_PERMANENCE = CONNECTED_PERM; //initial permanence for distal synapses
+
+
+        private T inputSource;
+        private float permance;
+
+        /// <summary>
+        /// Set inputSource and initial permanance value for the synapse.
+        /// </summary>
+        /// <param name="inputSrc">
+        /// object providing source of the input to this synapse (either 
+        /// a Column's Cell or a special InputCell.
+        /// </param>
+        public Synapse(T inputSrc)
+        {
+            inputSource = inputSrc;
+            permance = INITIAL_PERMANENCE;
+        }
+
+         
+        public bool isConnectedOnly
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+
+        public bool isConnected
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        /// <summary>
+        /// Return true if this Synapse is active due to the current input. 
+        /// </summary>
+        public bool isActive
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        /// <summary>
+        /// Return true if this Synapse was active due to the previous input at t-1. 
+        /// </summary>
+        public bool wasActive
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        /// <summary>
+        /// Return true if this Synapse was active due to the input previously being
+        /// in a learning state. 
+        /// </summary>
+        public bool wasActiveFromLearning
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        /// <summary>
+        /// Increase the permanence value of the synapse
+        /// </summary>
+        public void increasePermance()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        /// <summary>
+        /// Decrease the permance value of the synapse
+        /// </summary>
+        public void decreasePermance()
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+}
