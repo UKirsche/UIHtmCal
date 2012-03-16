@@ -153,12 +153,6 @@ namespace HTM.UIHtmCal
         {
             switch (InSource)
             {
-                case InputSource.DataBase :
-                    BitMapProcessor BMProcessor = new BitMapProcessor();
-                    BMProcessor.Initialize();
-                    InputRegion = BMProcessor as IRegionProcessor;
-                    InputStatistics = BMProcessor as IStatisticsLogSentence;
-                    break;
                 case InputSource.Sentences :
                     SentenceProcessor STProcessor = SentenceProcessor.Instance;
                     STProcessor.Initialize();                  
