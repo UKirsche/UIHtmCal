@@ -5,7 +5,7 @@ data flow.
 
 The UIHtmCal runs a C# implementation of  HTM algorithm which is leaned on the implementation Barry Maturkanich. I strongly recommend to download his code which you also can find on github: https://github.com/binarybarry/HTM-Camera-Toolkit.git
 
-============================================= Other NUMENTA implementations =================================================================================
+=================== Other NUMENTA implementations ==============================
 On the Numenta forum: http://www.numenta.com/ you can find other excellent implementations as well. 
 
 * A c++ implementation https://github.com/glguida/hacktm by Gianluca Guida
@@ -13,12 +13,12 @@ On the Numenta forum: http://www.numenta.com/ you can find other excellent imple
 * Another Python implementation https://github.com/nebkor/HTM by Nebkor
 * Yet another C# implementation https://github.com/neural5torm/OCodeHtm by Neural5torm
 
-============================================= Difference to other implementations ============================================================================
+=================== Difference to other implementations ==========================
 Most important changes in this version are a more flexible spatial pooler algorithm and a new visualization based on 3d XNA and WPF.
 The purpose of this project is to test how to make interpretable predictions with HTM. In order to use this project you should have visuals studio installed with NET-Framework of at least 3.5. Import the Project Solution UIHtmCal.sln in Visual Studio and run the program.
 
 
-============================================= C# Project Setup ===============================================================================================
+=================== C# Project Setup ====================
 Project solution includes several sub-projects:
 * HTMAnalytics: Mainly deals with stochastic processes and Log Displays for checking operations of HTM
 * HTMBitMapProcessor: Takes in example data to convert to bitmaps
@@ -28,11 +28,9 @@ Project solution includes several sub-projects:
 * UIHtmCal: User Interface for testing the HTM
 
 
-============================================= Usage and Installation ==========================================================================================
+=================== Usage and Installation ===============
 
-
-============================================= Additional Background ===========================================================================================
-
+=================== Additional Background ================
 Numenta (www.numenta.com) is designing an exciting new technology based on models of the neocortex called "Hierarchical Temporal Memory".
 
 Their most recent work on HTM, also called the "Cortical Learning Algorithms", is so far unreleased as a software project.  However they have published fairly detailed documentation as well as pseudo-code of how the overall algorithm works.

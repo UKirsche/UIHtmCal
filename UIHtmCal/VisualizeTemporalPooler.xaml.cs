@@ -648,29 +648,29 @@ namespace HTM.UIHtmCal
 			color = dictColors[HTMColors.Inactive].htmColor;
 			alphaValue = 1.0f;
 
-            if (cell.wasPredicted && cell.isActive)
-            {
-                color = dictColors[HTMColors.RightPrediction].htmColor;
-            }
+			if (cell.wasPredicted && cell.isActive)
+			{
+				color = dictColors[HTMColors.RightPrediction].htmColor;
+			}
 
-            else if (cell.wasPredicted && !cell.isActive)
-            {
-                color = dictColors[HTMColors.FalsePrediction].htmColor;
-            }
+			else if (cell.wasPredicted && !cell.isActive)
+			{
+				color = dictColors[HTMColors.FalsePrediction].htmColor;
+			}
 
-            else if (cell.isPredicting)
-            {
-                color = dictColors[HTMColors.Predicting].htmColor;
-            }
-            else if (cell.isLearning)
-            {
-                color = dictColors[HTMColors.Learning].htmColor;
-            }
-            else if (cell.isActive)
-            {
-                color = dictColors[HTMColors.Active].htmColor;
-            }
-            else if (cell.isPredicting && !cell.isSegmentPredicting)
+			else if (cell.isPredicting)
+			{
+				color = dictColors[HTMColors.Predicting].htmColor;
+			}
+			else if (cell.isLearning)
+			{
+				color = dictColors[HTMColors.Learning].htmColor;
+			}
+			else if (cell.isActive)
+			{
+				color = dictColors[HTMColors.Active].htmColor;
+			}
+			else if (cell.isPredicting && !cell.isSegmentPredicting)
 			{
 				color = dictColors[HTMColors.Predicting].htmColor;
 			}
